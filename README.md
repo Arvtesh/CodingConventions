@@ -1,4 +1,4 @@
-# C# Coding conventions
+# Coding conventions
 
 ## Synopsis
 The repository contains definition for coding conventions used for different languages.
