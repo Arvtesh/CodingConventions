@@ -20,6 +20,13 @@ This convention mostly follows [Microsoft C# coding guidelines](https://docs.mic
 * Use noun or noun phrases to name classes and structures: `Employee`, `DocumentCollection` etc.
 * Use noun phrases or adjectives to name interfaces: `IShape`, `IShapeCollection`, `ICancelable`.
 * Name source files according to their classes. An exception: file names with partial classes reflect their source or purpose: `Task.generated.cs`, `MainForm.designer.cs` etc.
+* Use `Async` suffix in the asynchronous method names:
+```csharp
+Task<string> DownloadFileAsync()
+{
+    // ...
+}
+```
 * Use verb or verb phrases (in past) to name events: `Enabled`, `ButtonClicked`:
 ```csharp
 public event EventHandler Enabled;
@@ -90,6 +97,8 @@ if (a > b)
 * Do use [SOLID](https://en.wikipedia.org/wiki/SOLID_(object-oriented_design)) design principles as common practice.
 * Consider using [Dispose pattern](https://docs.microsoft.com/en-us/dotnet/standard/design-guidelines/dispose-pattern) when implementing `IDisposable` interface.
 * Use `EventHandler` delegate type for declaring events; always make event handler method `private`.
+* Use `Enviroment.NewLine` instead of hard-coding the line breaks.
+* Use `Path.Combine()` or `Path.DirectorySeparatorChar` for path construction.
 * Do check argument values for publicly visible members (and throw `ArgumentException` if the value is not valid).
 * Avoid using conditional compilation directives (`#if`, `#define` etc.). Use `ConditionalAttribute` instead if possible. In cases when usage of the directives is unavoidable extract the conditional code into separate classes/methods.
 * Split method code into operator groups that implement a complete step. Separate the groups with blank lines. Consider moving local variables initialization into the very first group. Avoid single-line groups.
